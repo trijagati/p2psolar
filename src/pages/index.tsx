@@ -1,14 +1,14 @@
 "use client";
-import { products } from "@/utils/constants";
-import { HeroParallax } from "../components/ui/hero-parallax";
-import { HeroLamp } from "@/components/ui/hero-lamp";
+import { Gemini } from "@/components/gemini";
 import { Navbar } from "@/components/navbar";
+import { HeroLamp } from "@/components/ui/hero-lamp";
+import React from "react";
 
 export default function HeroParallaxDemo() {
   return <div>
     <Navbar className="top-2"/>
     <HeroLamp/>
-    <HeroParallax products={products} />;
+    <Gemini/>
     </div>
   
 }
