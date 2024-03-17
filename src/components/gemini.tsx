@@ -19,10 +19,12 @@ export function Gemini() {
 
   return (
     <div
-      className="h-[400vh] bg-slate-950  w-full rounded-md relative pt-40 overflow-clip"
+      className="h-[300vh] bg-slate-950  w-full rounded-md relative pt-40 overflow-clip"
       ref={ref}
     >
       <GoogleGeminiEffect
+      title="Decentralized p2pSolar Network"
+      description="Reduce the carbon footprint without compromising your needs and experiences"
         pathLengths={[
           pathLengthFirst,
           pathLengthSecond,
