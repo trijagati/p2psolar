@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: "/images/products/thumbnails/new/**",
       },
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+        port: "",
+        // pathname: "/images/products/thumbnails/new/**",
+      },
     ],
   },
 };
