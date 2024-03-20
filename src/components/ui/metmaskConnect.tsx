@@ -5,8 +5,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useSDK } from "@metamask/sdk-react";
+import { Wallet2 } from "lucide-react";
 import { formatAddress } from "../../lib/utils";
-
 export const ConnectWalletButton = () => {
   const { sdk, connected, connecting, account } = useSDK();
 
@@ -41,9 +41,9 @@ export const ConnectWalletButton = () => {
           </PopoverContent>
         </Popover>
       ) : (
-        <Button disabled={connecting} onClick={connect}>
-          <img src="/icons/WalletIcon.png" className="mr-2 h-4 w-4" /> Connect
-          Wallet
+        <Button variant={"secondary"} disabled={connecting} onClick={connect}>
+          <Wallet2 className="mr-2 h-4 w-4" />
+          Connect Wallet
         </Button>
       )}
     </div>
