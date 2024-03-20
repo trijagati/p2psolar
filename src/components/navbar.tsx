@@ -1,11 +1,12 @@
 "use client";
 import { cn } from "@/utils/cn";
+import { MetaMaskProvider } from "@metamask/sdk-react";
 import Link from "next/link";
 import { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
-import { MetaMaskProvider } from "@metamask/sdk-react";
-import { ConnectWalletButton } from "./ui/metmaskConnect";
 import { ThemeButton } from "./ui/ThemeButton";
+import { Button } from "./ui/button";
+import { ConnectWalletButton } from "./ui/metmaskConnect";
+import { Menu } from "./ui/navbar-menu";
 
 export function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -19,6 +20,30 @@ export function Navbar({ className }: { className?: string }) {
       name: "Next-Metamask-Boilerplate",
       url: host, // using the host constant defined above
     },
+  };
+  const handleClick = async () => {
+    try {
+      const response = await fetch(
+        "/api/users?name=test&email=test@gmail.com",
+        {
+          // method: "GET",
+          // headers: {
+          //   "Content-Type": "application/json",
+          // },
+          // body: JSON.stringify({ name: "user1", email: "user1@gmail.com" }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to create user");
+      }
+
+      alert("User created successfully!");
+      console.log("user: ", response);
+    } catch (error) {
+      console.error("Error creating user:", error);
+      alert("Failed to create user");
+    }
   };
   return (
     <div
@@ -36,7 +61,7 @@ export function Navbar({ className }: { className?: string }) {
         <div className="flex gap-5 items-center">
           <Link href={"/app/home"}>Dashboard </Link>
           <Link href={"/"}>Customers </Link>
-          <Link href={"/"}>Pricing </Link>
+          <Button onClick={handleClick}>Post a User </Button>
           <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
             <ConnectWalletButton />
           </MetaMaskProvider>
