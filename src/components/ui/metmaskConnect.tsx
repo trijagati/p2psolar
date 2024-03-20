@@ -41,7 +41,7 @@ export const ConnectWalletButton = () => {
           </PopoverContent>
         </Popover>
       ) : (
-        <Button disabled={connecting} onClick={connect}>
+        <Button variant={"secondary"} disabled={connecting} onClick={connect}>
           <img src="/icons/WalletIcon.png" className="mr-2 h-4 w-4" /> Connect
           Wallet
         </Button>
