@@ -6,6 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method === 'POST') {
         const { name, email } = req.body;
 
+        console.log(name,email);
         // Basic validation
         if (!name || !email) {
             console.log(name,email)
@@ -15,6 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         try {
             const db = await connectToDatabase();
             const collection = db.collection('users');
+            // console.log(collection);
 
             // Check if user with the same email already exists
             const existingUser = await collection.findOne({ email });
@@ -23,9 +25,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             }
 
             // Insert new user
+            // console.log("runn");
             const result = await collection.insertOne({ name, email }) as any; // Use type assertion to any
+            // console.log("runn");
+            // console.log(result);    
             const newUser = result.ops[0];
-
+            
             return res.status(201).json(newUser);
         } catch (error) {
             console.error('Error creating user:', error);
