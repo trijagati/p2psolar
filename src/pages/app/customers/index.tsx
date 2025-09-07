@@ -16,9 +16,7 @@ export default function CustomerPage() {
           <h1 className="font-semibold text-lg md:text-2xl">
             Nearby Sellers
             <span className="font-normal text-gray-500 dark:text-gray-400">
-              {`
-                                 - Showing 5 of 20'}
-                              `}
+              {`- Showing 5 of 20}`}
             </span>
           </h1>
         </div>
@@ -74,7 +72,7 @@ export default function CustomerPage() {
                 </div>
                 <div>
                   Offering affordable solar energy solutions for homes and
-                  businesses. Let's make the world greener together!
+                  businesses. Let&apos;s make the world greener together!
                 </div>
               </div>
               <Link
@@ -136,7 +134,7 @@ export default function CustomerPage() {
                 </div>
                 <div>
                   Solar energy consultant with a passion for sustainable living.
-                  Let's talk about your solar journey!
+                  Let&apos;s talk about your solar journey!
                 </div>
               </div>
               <Link
@@ -167,7 +165,7 @@ export default function CustomerPage() {
                 </div>
                 <div>
                   Offering solar energy solutions for homes and businesses.
-                  Let's make the switch to clean energy!
+                  Let&apos;s make the switch to clean energy!
                 </div>
               </div>
               <Link

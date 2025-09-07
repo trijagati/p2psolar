@@ -44,13 +44,13 @@ export function Transactions() {
             <img
               alt="Avatar"
               className="rounded-full"
-              height="32"
+              height={32}
+              width={32}
               src="/placeholder.svg"
               style={{
                 aspectRatio: "32/32",
                 objectFit: "cover",
               }}
-              width="32"
             />
             <span className="sr-only">Toggle user menu</span>
           </Button>
