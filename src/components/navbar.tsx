@@ -48,14 +48,14 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 ",
+        "fixed top-10 inset-x-0 max-w-3xl mx-auto z-50 ",
         className
       )}
     >
       <Menu setActive={setActive}>
         <div>
           <Link href="/" className="flex items-center">
-            <img src="/logo.png" className="h-12 me-3" alt="FlowBite Logo" />
+            <img src="/logo.png" className="w-24 me-3" alt="FlowBite Logo" />
           </Link>
         </div>
         <div className="flex gap-5 items-center">
