@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
 import { CardContent, Card } from "@/components/ui/card"
 
@@ -73,14 +73,19 @@ export function Transactions() {
               <Label className="min-w-[100px]" htmlFor="date-range">
                 Date range
               </Label>
-              <Select className="w-[200px]" id="date-range">
-                <option value="today">Today</option>
-                <option value="yesterday">Yesterday</option>
-                <option value="last-7-days">Last 7 days</option>
-                <option value="last-30-days">Last 30 days</option>
-                <option value="this-month">This month</option>
-                <option value="last-month">Last month</option>
-                <option value="custom">Custom</option>
+              <Select>
+                <SelectTrigger className="w-[200px]" id="date-range">
+                  <SelectValue placeholder="Select date range" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="today">Today</SelectItem>
+                  <SelectItem value="yesterday">Yesterday</SelectItem>
+                  <SelectItem value="last-7-days">Last 7 days</SelectItem>
+                  <SelectItem value="last-30-days">Last 30 days</SelectItem>
+                  <SelectItem value="this-month">This month</SelectItem>
+                  <SelectItem value="last-month">Last month</SelectItem>
+                  <SelectItem value="custom">Custom</SelectItem>
+                </SelectContent>
               </Select>
             </div>
             <div className="flex items-center gap-2">
@@ -115,7 +120,7 @@ export function Transactions() {
                     <TableCell>100</TableCell>
                     <TableCell>$50.00</TableCell>
                     <TableCell className="text-right">
-                      <Button size="inline" variant="ghost">
+                      <Button size="sm" variant="ghost">
                         View profile
                       </Button>
                     </TableCell>
@@ -126,7 +131,7 @@ export function Transactions() {
                     <TableCell>150</TableCell>
                     <TableCell>$75.00</TableCell>
                     <TableCell className="text-right">
-                      <Button size="inline" variant="ghost">
+                      <Button size="sm" variant="ghost">
                         View profile
                       </Button>
                     </TableCell>
@@ -137,7 +142,7 @@ export function Transactions() {
                     <TableCell>200</TableCell>
                     <TableCell>$100.00</TableCell>
                     <TableCell className="text-right">
-                      <Button size="inline" variant="ghost">
+                      <Button size="sm" variant="ghost">
                         View profile
                       </Button>
                     </TableCell>
@@ -148,7 +153,7 @@ export function Transactions() {
                     <TableCell>250</TableCell>
                     <TableCell>$125.00</TableCell>
                     <TableCell className="text-right">
-                      <Button size="inline" variant="ghost">
+                      <Button size="sm" variant="ghost">
                         View profile
                       </Button>
                     </TableCell>
@@ -159,7 +164,7 @@ export function Transactions() {
                     <TableCell>300</TableCell>
                     <TableCell>$150.00</TableCell>
                     <TableCell className="text-right">
-                      <Button size="inline" variant="ghost">
+                      <Button size="sm" variant="ghost">
                         View profile
                       </Button>
                     </TableCell>
@@ -175,7 +180,7 @@ export function Transactions() {
 }
 
 
-function Package2Icon(props) {
+function Package2Icon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -197,7 +202,7 @@ function Package2Icon(props) {
 }
 
 
-function SearchIcon(props) {
+function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -218,7 +223,7 @@ function SearchIcon(props) {
 }
 
 
-function ChevronLeftIcon(props) {
+function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -238,7 +243,7 @@ function ChevronLeftIcon(props) {
 }
 
 
-function ChevronRightIcon(props) {
+function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
